@@ -1,0 +1,14 @@
+node_modules/
+.next/
+out/
+.env*
+npm-debug.log*
+yarn-error.log*
+*.tsbuildinfo
+*.log
+!.env.example
+
+# Local editor files
+.DS_Store
+.idea/
+.vscode/
