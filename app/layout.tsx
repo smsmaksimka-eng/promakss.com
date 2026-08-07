@@ -14,20 +14,20 @@ export const metadata: Metadata = {
     "dnb",
     "electronic music",
     "новый релиз",
-    "Спи",
+    "Ёжик в тумане",
   ],
   openGraph: {
     title: "PROMAKSS",
     description: "Официальный сайт музыкального проекта PROMAKSS.",
     type: "website",
     locale: "ru_RU",
-    images: [{ url: "/covers/current.jpg", alt: "Текущий релиз PROMAKSS" }],
+    images: [{ url: "/releases/hedgehog-in-the-fog.png", alt: "Обложка релиза «Ёжик в тумане»" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "PROMAKSS",
     description: "Официальный сайт музыкального проекта PROMAKSS.",
-    images: ["/covers/current.jpg"],
+    images: ["/releases/hedgehog-in-the-fog.png"],
   },
   icons: {
     icon: "/icons/favicon.png",
