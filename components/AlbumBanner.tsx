@@ -14,14 +14,16 @@ export default function AlbumBanner() {
   return (
     <section className="mx-auto w-full max-w-[760px] px-6 sm:px-8" aria-label="Альбом Голоса планет">
       <div className="group flex w-full flex-col gap-3 rounded-[28px] border border-[#b9853d]/65 bg-[rgba(25,23,21,0.78)] p-4 text-[var(--color-cream)] shadow-[0_0_18px_rgba(205,155,73,0.08)] transition-[box-shadow,border-color] duration-[220ms] ease-out hover:border-[#d2a45a] hover:shadow-[0_0_28px_rgba(205,155,73,0.14)] sm:flex-row sm:items-center sm:gap-5 sm:p-4">
-      <Image
-        src={album.cover}
-        alt="Голоса планет — promakss"
-        width={48}
-        height={48}
-        priority
-        className="aspect-square h-[120px] w-[120px] shrink-0 self-center rounded-[20px] object-cover transition-transform duration-[220ms] ease-out group-hover:scale-[1.02] sm:h-[120px] sm:w-[120px] sm:self-auto"
-      />
+      <div className="relative aspect-[16/7] w-full shrink-0 overflow-hidden rounded-[20px] sm:aspect-auto sm:h-[120px] sm:w-[220px]">
+        <Image
+          src={album.cover}
+          alt="Голоса планет — promakss"
+          fill
+          priority
+          sizes="(max-width: 639px) calc(100vw - 48px), 220px"
+          className="object-cover object-center transition-transform duration-[220ms] ease-out group-hover:scale-[1.02]"
+        />
+      </div>
       <div className="flex min-w-0 flex-1 flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-5">
         <div className="min-w-0 text-center sm:text-left">
           <span className="block truncate text-[20px] font-semibold tracking-[0.14em] sm:text-[22px] sm:tracking-[0.18em]">{album.title}</span>
