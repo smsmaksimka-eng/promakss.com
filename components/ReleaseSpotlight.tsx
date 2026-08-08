@@ -26,10 +26,10 @@ function getTimeLeft(target: number): TimeLeft {
 }
 
 const timerItems = [
-  ["days", "ДЕНЬ"],
-  ["hours", "ЧАС"],
-  ["minutes", "МИН"],
-  ["seconds", "СЕК"],
+  ["days", "дней"],
+  ["hours", "часов"],
+  ["minutes", "минут"],
+  ["seconds", "секунд"],
 ] as const;
 
 export default function ReleaseSpotlight() {
