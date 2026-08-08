@@ -11,18 +11,17 @@ const platforms = [
 
 export default function StreamingPanel() {
   return (
-    <section className="w-full rounded-[22px] bg-[var(--color-button)] px-8 py-3 sm:px-10 sm:py-5" aria-label="Музыкальные платформы">
-      {platforms.filter(({ key }) => release.links[key]).map(({ key, label, icon: Icon, color }, index, visiblePlatforms) => (
+    <section className="flex w-full items-center justify-center gap-6 py-3 sm:gap-8 sm:py-4" aria-label="Музыкальные платформы">
+      {platforms.filter(({ key }) => release.links[key]).map(({ key, label, icon: Icon, color }) => (
         <a
           key={key}
           href={release.links[key]}
           target="_blank"
           rel="noopener noreferrer"
-          className={`group flex h-[90px] w-full items-center gap-7 text-[27px] font-normal text-[var(--color-cream)] transition-[transform,opacity,background-color,border-color,box-shadow] duration-200 ease-out hover:scale-[1.015] sm:h-[104px] sm:gap-9${index < visiblePlatforms.length - 1 ? " border-b border-[var(--color-border)]" : ""}`}
+          aria-label={`Слушать «${release.title}» в ${label}`}
+          className="group flex h-12 w-12 items-center justify-center rounded-[14px] text-[var(--color-cream)] transition-[transform,opacity,background-color,border-color,box-shadow,filter] duration-200 ease-out hover:scale-[1.04] hover:brightness-110 hover:[filter:drop-shadow(0_0_6px_rgba(242,223,197,0.22))] sm:h-14 sm:w-14"
         >
-          <Icon aria-hidden="true" size={56} color={color} className="h-[45px] w-[45px] sm:h-[50px] sm:w-[50px]" />
-          <span>{label}</span>
-          <span aria-hidden="true" className="ml-auto text-[37px] font-light leading-none text-white/40 transition-transform duration-200 ease-out group-hover:translate-x-1 sm:text-[41px]">›</span>
+          <Icon aria-hidden="true" size={56} color={color} className="h-9 w-9 sm:h-10 sm:w-10" />
         </a>
       ))}
     </section>
