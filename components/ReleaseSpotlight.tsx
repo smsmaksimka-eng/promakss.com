@@ -71,10 +71,10 @@ export default function ReleaseSpotlight() {
         />
       </div>
 
-      <div className="flex min-w-0 flex-1 flex-col">
+      <div className="flex min-w-0 flex-1 flex-col text-center">
         <p className="text-[12px] font-semibold tracking-[0.28em] text-[#d3a457]">{released ? spotlight.labelReleased : spotlight.labelUpcoming}</p>
         <h2 className="mt-2 text-[28px] font-bold tracking-[0.02em]">{spotlight.title}</h2>
-        <p className="mt-1 text-[13px] tracking-[0.12em] text-white/55">{spotlight.displayDate}</p>
+        <p className="mt-1 text-[22px] tracking-[0.12em] text-white/55">{spotlight.displayDate}</p>
         <p className="mt-3 text-[11px] font-semibold tracking-[0.24em] text-[#d3a457]">{released ? "" : "ДО ВЫХОДА РЕЛИЗА:"}</p>
 
         {!released && (
@@ -88,8 +88,8 @@ export default function ReleaseSpotlight() {
           </div>
         )}
 
-        <span className="mt-3 self-start text-[13px] font-semibold tracking-[0.16em] text-[#d3a457] transition-transform duration-200 group-hover:translate-x-1">
-          {released ? "LISTEN NOW →" : "ПРЕСЕЙВ →"}
+        <span className="mt-3 self-center text-[13px] font-semibold tracking-[0.16em] text-[#d3a457] transition-transform duration-200 group-hover:translate-x-1">
+          {released ? "← LISTEN NOW →" : "← ПРЕСЕЙВ →"}
         </span>
         </div>
       </a>
