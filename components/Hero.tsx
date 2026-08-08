@@ -14,7 +14,7 @@ export default function Hero() {
   const showListenButton = false;
 
   return (
-    <section className="mx-auto flex w-full max-w-[760px] flex-col items-center px-6 pb-12 pt-12 sm:px-8 sm:pb-16 sm:pt-16">
+    <section className="mx-auto mt-4 flex w-full max-w-[760px] flex-col items-center px-6 pb-12 pt-12 sm:mt-5 sm:px-8 sm:pb-16 sm:pt-16">
       <p className={`${releaseTitleFont.className} mb-6 text-center text-[22px] font-semibold tracking-[0.3em] text-[var(--color-cream)] sm:mb-7`}>
         {release.subtitle}
       </p>

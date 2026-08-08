@@ -20,7 +20,7 @@ export default function AlbumBanner() {
         width={48}
         height={48}
         priority
-        className="aspect-square h-auto w-full shrink-0 rounded-[20px] object-cover transition-transform duration-[220ms] ease-out group-hover:scale-[1.02] sm:h-[140px] sm:w-[140px]"
+        className="aspect-square h-[120px] w-[120px] shrink-0 self-center rounded-[20px] object-cover transition-transform duration-[220ms] ease-out group-hover:scale-[1.02] sm:h-[120px] sm:w-[120px] sm:self-auto"
       />
       <div className="flex min-w-0 flex-1 flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-5">
         <div className="min-w-0 text-center sm:text-left">
