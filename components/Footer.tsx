@@ -12,6 +12,9 @@ const socialLinks = [
 export default function Footer() {
   return (
     <footer className="mx-auto flex w-full max-w-[760px] flex-col items-center gap-7 px-8 pb-12 pt-10 sm:px-8 sm:pt-12">
+      <p className="text-center text-[14px] font-semibold tracking-[0.18em] text-[var(--color-cream)] sm:text-[22px] sm:tracking-[0.3em]">
+        ПО ВОПРОСАМ СОТРУДНИЧЕСТВА
+      </p>
       <div className="flex items-center justify-center gap-8">
         {socialLinks.map(({ key, label, icon: Icon }) => (
           <a
