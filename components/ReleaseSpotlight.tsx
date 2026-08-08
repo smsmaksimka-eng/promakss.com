@@ -58,7 +58,7 @@ export default function ReleaseSpotlight() {
         target={destination ? "_blank" : undefined}
         rel={destination ? "noopener noreferrer" : undefined}
         aria-label={`${released ? spotlight.labelReleased : spotlight.labelUpcoming}: ${spotlight.title}`}
-        className="spotlight-card group flex w-full flex-col gap-4 rounded-[30px] border border-[#b9853d]/70 bg-[rgba(25,23,21,0.78)] px-4 py-4 text-[var(--color-cream)] backdrop-blur-sm transition-[box-shadow,border-color] duration-[220ms] ease-out hover:border-[#d2a45a] hover:shadow-[0_0_28px_rgba(205,155,73,0.16)] sm:flex-row sm:items-center sm:gap-5 sm:px-5 sm:py-5"
+        className="spotlight-card group flex w-full flex-col gap-2 rounded-[30px] border border-[#b9853d]/70 bg-[rgba(25,23,21,0.78)] px-4 py-3 text-[var(--color-cream)] backdrop-blur-sm transition-[box-shadow,border-color] duration-[220ms] ease-out hover:border-[#d2a45a] hover:shadow-[0_0_28px_rgba(205,155,73,0.16)] sm:flex-row sm:items-center sm:gap-4 sm:px-5 sm:py-4"
       >
       <div className="relative h-[180px] w-full shrink-0 overflow-hidden rounded-[22px] border border-white/10 sm:h-[220px] sm:w-[220px]">
         <Image
@@ -72,13 +72,13 @@ export default function ReleaseSpotlight() {
       </div>
 
       <div className="flex min-w-0 flex-1 flex-col text-center">
-        <p className="text-[12px] font-semibold tracking-[0.28em] text-[#d3a457]">{released ? spotlight.labelReleased : spotlight.labelUpcoming}</p>
-        <h2 className="mt-2 text-[28px] font-bold tracking-[0.02em]">{spotlight.title}</h2>
-        <p className="mt-1 text-[22px] tracking-[0.12em] text-white/55">{spotlight.displayDate}</p>
-        <p className="mt-3 text-[11px] font-semibold tracking-[0.24em] text-[#d3a457]">{released ? "" : "ДО ВЫХОДА РЕЛИЗА:"}</p>
+        <p className="text-[17px] font-semibold tracking-[0.28em] text-[#d3a457]">{released ? spotlight.labelReleased : spotlight.labelUpcoming}</p>
+        <h2 className="mt-1 text-[28px] font-bold tracking-[0.02em]">{spotlight.title}</h2>
+        <p className="mt-0 text-[22px] tracking-[0.12em] text-white/55">{spotlight.displayDate}</p>
+        <p className="mt-2 text-[11px] font-semibold tracking-[0.24em] text-[#d3a457]">{released ? "" : "ДО ВЫХОДА РЕЛИЗА:"}</p>
 
         {!released && (
-          <div className="mt-2 grid grid-cols-2 gap-2 sm:grid-cols-4">
+          <div className="mt-1 grid grid-cols-2 gap-2 sm:grid-cols-4">
             {timerItems.map(([key, label]) => (
               <div key={key} className="flex min-w-0 flex-col items-center rounded-[14px] border border-white/10 bg-white/[0.035] px-2 py-2">
                 <span className="text-[22px] font-semibold leading-none tabular-nums">{String(timeLeft[key]).padStart(2, "0")}</span>
@@ -88,7 +88,7 @@ export default function ReleaseSpotlight() {
           </div>
         )}
 
-        <span className="mt-3 self-center text-[13px] font-semibold tracking-[0.16em] text-[#d3a457] transition-transform duration-200 group-hover:translate-x-1">
+        <span className="mt-2 self-center text-[13px] font-semibold tracking-[0.16em] text-[#d3a457] transition-transform duration-200 group-hover:translate-x-1">
           {released ? "← LISTEN NOW →" : "← ПРЕСЕЙВ →"}
         </span>
         </div>
