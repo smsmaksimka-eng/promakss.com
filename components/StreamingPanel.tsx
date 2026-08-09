@@ -1,6 +1,10 @@
-import release from "@/data/release.json";
 import { SiSpotify, SiVk, SiYoutube } from "react-icons/si";
 import { FaYandex } from "react-icons/fa";
+
+type ReleaseData = {
+  title: string;
+  links: Record<string, string>;
+};
 
 const platforms = [
   { key: "yandex", label: "Яндекс Музыка", icon: FaYandex, color: "#ffd600" },
@@ -9,7 +13,7 @@ const platforms = [
   { key: "spotify", label: "Spotify", icon: SiSpotify, color: "#1ed760" },
 ] as const;
 
-export default function StreamingPanel() {
+export default function StreamingPanel({ release }: { release: ReleaseData }) {
   return (
     <section className="flex w-full items-center justify-center gap-6 py-3 sm:gap-8 sm:py-4" aria-label="Музыкальные платформы">
       {platforms.filter(({ key }) => release.links[key]).map(({ key, label, icon: Icon, color }) => (

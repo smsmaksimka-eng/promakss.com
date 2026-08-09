@@ -1,4 +1,4 @@
-import release from "@/data/release.json";
+import defaultRelease from "@/data/release.json";
 import Image from "next/image";
 import { Cormorant_Garamond } from "next/font/google";
 import ListenButton from "./ListenButton";
@@ -10,7 +10,9 @@ const releaseTitleFont = Cormorant_Garamond({
   display: "swap",
 });
 
-export default function Hero() {
+type ReleaseData = typeof defaultRelease;
+
+export default function Hero({ release = defaultRelease }: { release?: ReleaseData }) {
   const showListenButton = false;
 
   return (
@@ -32,7 +34,7 @@ export default function Hero() {
       </div>
       <div className="flex w-full flex-col items-center">
         {showListenButton && <div className="mt-10 w-full sm:mt-12"><ListenButton /></div>}
-        <div className="mt-10 w-full sm:mt-12"><StreamingPanel /></div>
+        <div className="mt-10 w-full sm:mt-12"><StreamingPanel release={release} /></div>
       </div>
     </section>
   );
