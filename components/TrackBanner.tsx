@@ -22,7 +22,9 @@ export default function TrackBanner() {
           height={64}
           className="h-14 w-14 shrink-0 rounded-[16px] object-cover transition-transform duration-[220ms] ease-out group-hover:scale-[1.02] sm:h-16 sm:w-16"
         />
-        <h2 className="min-w-0 flex-1 truncate text-[17px] font-semibold tracking-[0.08em] sm:text-[20px] sm:tracking-[0.12em]">{release.title}</h2>
+        <h2 className="min-w-0 flex-1 text-[17px] font-semibold leading-tight tracking-[0.08em] sm:text-[20px] sm:tracking-[0.12em]">
+          Ёжик в<span className="sm:hidden"><br /></span><span className="sm:hidden">тумане</span><span className="hidden sm:inline"> тумане</span>
+        </h2>
         <div className="flex shrink-0 items-center gap-2 sm:gap-4">
           {platforms.filter(({ key }) => release.links[key]).map(({ key, label, icon: Icon }) => (
             <a

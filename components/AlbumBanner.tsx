@@ -28,22 +28,22 @@ export default function AlbumBanner({ data = album, label }: { data?: AlbumData;
     <section className="mx-auto w-full max-w-[760px] px-6 sm:px-8" aria-label={`Альбом ${data.title}`}>
       {label && <p className="mb-6 text-center text-[22px] font-semibold tracking-[0.3em] text-[var(--color-cream)] sm:mb-7">{label}</p>}
       <div className="group flex w-full flex-col gap-3 rounded-[28px] border border-[#b9853d]/65 bg-[rgba(25,23,21,0.78)] p-4 text-[var(--color-cream)] shadow-[0_0_18px_rgba(205,155,73,0.08)] transition-[box-shadow,border-color] duration-[220ms] ease-out hover:border-[#d2a45a] hover:shadow-[0_0_28px_rgba(205,155,73,0.14)] sm:flex-row sm:items-center sm:gap-5 sm:p-4">
-      <div className="relative aspect-[16/7] w-full shrink-0 overflow-hidden rounded-[20px] sm:aspect-auto sm:h-[120px] sm:w-[220px]">
+      <div className="relative aspect-[16/7] w-full shrink-0 overflow-hidden rounded-[20px] sm:aspect-auto sm:h-[100px] sm:w-[160px]">
         <Image
         src={data.cover}
         alt={`${data.title} — promakss`}
           fill
           priority
-          sizes="(max-width: 639px) calc(100vw - 48px), 220px"
+          sizes="(max-width: 639px) calc(100vw - 48px), 160px"
           className="object-cover object-center transition-transform duration-[220ms] ease-out group-hover:scale-[1.02]"
         />
       </div>
-      <div className="flex min-w-0 flex-1 flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-5">
+      <div className="flex min-w-0 flex-1 flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-3">
         <div className="min-w-0 text-center sm:text-left">
           <span className="block truncate text-[20px] font-semibold tracking-[0.14em] sm:text-[22px] sm:tracking-[0.18em]">{data.title}</span>
           {data.description && <span className="mt-1 block truncate text-[11px] tracking-[0.14em] text-white/55 sm:text-[12px]">{data.description}</span>}
         </div>
-        <div className="grid grid-cols-4 items-center justify-items-center gap-4 sm:flex sm:gap-5">
+        <div className="grid grid-cols-4 items-center justify-items-center gap-4 sm:flex sm:gap-3">
           {platforms.map(({ key, label, icon: Icon }) => (
             <a
               key={key}
