@@ -7,5 +7,5 @@ import TrackBanner from "@/components/TrackBanner";
 import miAmor from "@/data/mi-amor.json";
 
 export default function HomePage() {
-  return <><Header /><main><AlbumBanner data={album} /><TrackBanner data={miAmor} sectionLabel="НОВЫЙ РЕЛИЗ" /><TrackBanner /><TrackBanner data={aestheticGirl} showLabel={false} /></main><Footer /></>;
+  return <><Header /><main className="space-y-8"><AlbumBanner data={album} /><TrackBanner data={miAmor} sectionLabel="НОВЫЙ РЕЛИЗ" highlight /><TrackBanner /><TrackBanner data={aestheticGirl} showLabel={false} /></main><Footer /></>;
 }
