@@ -1,7 +1,10 @@
+"use client";
+
 import Image from "next/image";
 import { FaYandex } from "react-icons/fa";
 import { SiSpotify, SiVk, SiYoutube } from "react-icons/si";
 import album from "@/data/album.json";
+import { reachMetrikaGoal, streamGoals } from "@/lib/yandex-metrika";
 
 type AlbumData = {
   title: string;
@@ -23,6 +26,11 @@ const platforms = [
 
 export default function AlbumBanner({ data = album, label }: { data?: AlbumData; label?: string }) {
   const links = data.links ?? data;
+  const releaseGoal = data.title.toLowerCase().includes("voices") || data.title.toLowerCase().includes("голос")
+    ? "release_voices_of_planets"
+    : data.title.toLowerCase().includes("aesthetic")
+      ? "release_aesthetic_girl"
+      : undefined;
 
   return (
     <section className="mx-auto w-full max-w-[760px] px-6 sm:px-8" aria-label={`Альбом ${data.title}`}>
@@ -50,6 +58,10 @@ export default function AlbumBanner({ data = album, label }: { data?: AlbumData;
               href={links[key]}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => {
+                if (releaseGoal) reachMetrikaGoal(releaseGoal);
+                reachMetrikaGoal(streamGoals[key]);
+              }}
               aria-label={label}
               className="flex h-10 w-10 items-center justify-center rounded-full text-[#d3a457] transition-[opacity,filter] duration-[200ms] ease-out hover:opacity-100 hover:[filter:drop-shadow(0_0_6px_rgba(211,164,87,0.7))]"
             >

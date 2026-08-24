@@ -1,5 +1,8 @@
+"use client";
+
 import { SiSpotify, SiVk, SiYoutube } from "react-icons/si";
 import { FaYandex } from "react-icons/fa";
+import { reachMetrikaGoal, streamGoals } from "@/lib/yandex-metrika";
 
 type ReleaseData = {
   title: string;
@@ -22,6 +25,17 @@ export default function StreamingPanel({ release }: { release: ReleaseData }) {
           href={release.links[key]}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => {
+            const releaseGoal = release.title.toLowerCase().includes("aesthetic")
+              ? "release_aesthetic_girl"
+              : release.title.toLowerCase().includes("голос")
+                ? "release_voices_of_planets"
+                : release.title.toLowerCase().includes("ёжик") || release.title.toLowerCase().includes("ежик")
+                  ? "release_hedgehog_in_the_fog"
+                  : undefined;
+            if (releaseGoal) reachMetrikaGoal(releaseGoal);
+            reachMetrikaGoal(streamGoals[key]);
+          }}
           aria-label={`Слушать «${release.title}» в ${label}`}
           className="group flex h-12 w-12 items-center justify-center rounded-[14px] text-[var(--color-cream)] transition-[transform,opacity,background-color,border-color,box-shadow,filter] duration-200 ease-out hover:scale-[1.04] hover:brightness-110 hover:[filter:drop-shadow(0_0_6px_rgba(242,223,197,0.22))] sm:h-14 sm:w-14"
         >

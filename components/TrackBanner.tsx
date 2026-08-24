@@ -1,7 +1,10 @@
+"use client";
+
 import Image from "next/image";
 import { FaYandex } from "react-icons/fa";
 import { SiSpotify, SiVk, SiYoutube } from "react-icons/si";
 import release from "@/data/release.json";
+import { reachMetrikaGoal, streamGoals } from "@/lib/yandex-metrika";
 
 const platforms = [
   { key: "yandex", label: "Слушать «Ёжик в тумане» в Яндекс Музыке", icon: FaYandex },
@@ -32,6 +35,10 @@ export default function TrackBanner() {
               href={release.links[key]}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => {
+                reachMetrikaGoal("release_hedgehog_in_the_fog");
+                reachMetrikaGoal(streamGoals[key]);
+              }}
               aria-label={label}
               className="flex h-9 w-9 items-center justify-center rounded-full text-[#d3a457] transition-[opacity,filter] duration-[200ms] ease-out hover:opacity-100 hover:[filter:drop-shadow(0_0_6px_rgba(211,164,87,0.7))] sm:h-10 sm:w-10"
             >
