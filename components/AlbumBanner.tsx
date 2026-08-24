@@ -8,6 +8,7 @@ import { reachMetrikaGoal, streamGoals } from "@/lib/yandex-metrika";
 
 type AlbumData = {
   title: string;
+  artist?: string;
   description?: string;
   cover: string;
   links?: Record<string, string>;
@@ -30,6 +31,8 @@ export default function AlbumBanner({ data = album, label }: { data?: AlbumData;
     ? "release_voices_of_planets"
     : data.title.toLowerCase().includes("aesthetic")
       ? "release_aesthetic_girl"
+      : data.title.toLowerCase().includes("mi amor")
+        ? "release_mi_amor"
       : undefined;
 
   return (
@@ -52,7 +55,7 @@ export default function AlbumBanner({ data = album, label }: { data?: AlbumData;
           {data.description && <span className="mt-1 block truncate text-[11px] tracking-[0.14em] text-white/55 sm:text-[12px]">{data.description}</span>}
         </div>
         <div className="grid grid-cols-4 items-center justify-items-center gap-4 sm:flex sm:gap-3">
-          {platforms.map(({ key, label, icon: Icon }) => (
+          {platforms.filter(({ key }) => links[key]).map(({ key, label, icon: Icon }) => (
             <a
               key={key}
               href={links[key]}
