@@ -53,7 +53,6 @@ export default function UpcomingRelease() {
         />
         <div className="min-w-0 flex-1">
           <h2 className="text-[20px] font-semibold tracking-[0.08em] sm:text-[28px] sm:tracking-[0.12em]">{upcoming.title}</h2>
-          <p className="mt-1 text-[10px] tracking-[0.12em] text-white/55 sm:text-[12px]">Это должен услышать каждый...</p>
           {countdown.online ? (
             <p className="mt-2 text-[14px] tracking-[0.2em] text-[#d3a457]">ОНЛАЙН</p>
           ) : (
@@ -71,6 +70,7 @@ export default function UpcomingRelease() {
               ))}
             </div>
           )}
+          <p className="mt-2 text-center text-[10px] tracking-[0.12em] text-white/55 sm:mt-3 sm:text-[12px]">Это должен услышать каждый...</p>
           <div className="mt-2 flex max-w-full items-center gap-1.5 sm:mt-4 sm:gap-2">
             <p className="shrink-0 text-[8px] font-semibold tracking-[0.12em] text-[#d3a457] sm:text-[10px] sm:tracking-[0.22em]">ПРЕСЕЙВ</p>
             <div className="flex min-w-0 flex-nowrap gap-1 sm:gap-2">
