@@ -39,7 +39,7 @@ export default function AlbumBanner({ data = album, label }: { data?: AlbumData;
     <section className="mx-auto w-full max-w-[760px] px-6 sm:px-8" aria-label={`Альбом ${data.title}`}>
       {label && <p className="mb-6 text-center text-[22px] font-semibold tracking-[0.3em] text-[var(--color-cream)] sm:mb-7">{label}</p>}
       <div className="group flex w-full items-center gap-3 rounded-[28px] border border-[#b9853d]/65 bg-[rgba(25,23,21,0.78)] px-3 py-3 text-[var(--color-cream)] shadow-[0_0_18px_rgba(205,155,73,0.08)] transition-[box-shadow,border-color] duration-[220ms] ease-out hover:border-[#d2a45a] hover:shadow-[0_0_28px_rgba(205,155,73,0.14)] sm:gap-5 sm:px-4">
-      <div className="relative h-14 w-24 shrink-0 overflow-hidden rounded-[16px] sm:h-16 sm:w-28">
+      <div className="relative h-12 w-20 shrink-0 overflow-hidden rounded-[16px] sm:h-16 sm:w-28">
         <Image
         src={data.cover}
         alt={`${data.title} — promakss`}
@@ -54,7 +54,7 @@ export default function AlbumBanner({ data = album, label }: { data?: AlbumData;
           <span className="block truncate text-[16px] font-semibold tracking-[0.12em] sm:text-[18px] sm:tracking-[0.16em]">{data.title}</span>
           {data.description && <span className="mt-1 block truncate text-[11px] tracking-[0.14em] text-white/55 sm:text-[12px]">{data.description}</span>}
         </div>
-        <div className="flex shrink-0 items-center gap-2 sm:gap-3">
+        <div className="flex shrink-0 items-center gap-1 sm:gap-3">
           {platforms.filter(({ key }) => links[key]).map(({ key, label, icon: Icon }) => (
             <a
               key={key}
@@ -66,9 +66,9 @@ export default function AlbumBanner({ data = album, label }: { data?: AlbumData;
                 reachMetrikaGoal(streamGoals[key]);
               }}
               aria-label={label}
-              className="flex h-10 w-10 items-center justify-center rounded-full text-[#d3a457] transition-[opacity,filter] duration-[200ms] ease-out hover:opacity-100 hover:[filter:drop-shadow(0_0_6px_rgba(211,164,87,0.7))]"
+              className="flex h-7 w-7 items-center justify-center rounded-full text-[#d3a457] transition-[opacity,filter] duration-[200ms] ease-out hover:opacity-100 hover:[filter:drop-shadow(0_0_6px_rgba(211,164,87,0.7))] sm:h-10 sm:w-10"
             >
-              <Icon aria-hidden="true" className="h-6 w-6 sm:h-7 sm:w-7" />
+              <Icon aria-hidden="true" className="h-4 w-4 sm:h-7 sm:w-7" />
             </a>
           ))}
         </div>
