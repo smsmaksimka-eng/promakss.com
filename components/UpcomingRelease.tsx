@@ -70,7 +70,26 @@ export default function UpcomingRelease() {
               ))}
             </div>
           )}
-          <p className="mt-3 truncate text-[9px] tracking-[0.12em] text-white/40 sm:text-[10px]">{upcoming.timezone}</p>
+          <div className="mt-4 sm:mt-5">
+            <p className="text-[10px] font-semibold tracking-[0.22em] text-[#d3a457]">ПРЕСЕЙВ</p>
+            <div className="mt-2 flex flex-wrap gap-1.5 sm:gap-2">
+              {[
+                ["ЯНДЕКС МУЗЫКА", upcoming.presave.yandex],
+                ["VK МУЗЫКА", upcoming.presave.vk],
+                ["SPOTIFY", upcoming.presave.spotify],
+              ].map(([label, href]) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-full border border-[#b9853d]/65 px-2 py-1 text-[8px] font-semibold tracking-[0.08em] text-[#f2dfc5] transition-colors duration-200 hover:border-[#d2a45a] hover:text-[#d3a457] sm:px-2.5 sm:text-[9px]"
+                >
+                  {label}
+                </a>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
