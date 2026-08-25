@@ -77,6 +77,39 @@ body {
   pointer-events: none;
 }
 
+.upcoming-release-card {
+  box-shadow: 0 0 22px rgba(205, 155, 73, 0.08);
+}
+
+.upcoming-release-glow {
+  position: relative;
+  z-index: 0;
+  animation: upcoming-release-ambilight 5s ease-in-out infinite;
+}
+
+.upcoming-release-glow::before {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  inset: -18px;
+  border-radius: 42px;
+  background: rgba(205, 155, 73, 0.176);
+  filter: blur(30px);
+  opacity: 0.72;
+  animation: upcoming-release-halo 5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes upcoming-release-ambilight {
+  0%, 100% { box-shadow: 0 0 22px rgba(205, 155, 73, 0.08), 0 0 54px rgba(205, 155, 73, 0.04); }
+  50% { box-shadow: 0 0 28px rgba(205, 155, 73, 0.136), 0 0 68px rgba(205, 155, 73, 0.064); }
+}
+
+@keyframes upcoming-release-halo {
+  0%, 100% { opacity: 0.464; transform: scale(0.98); }
+  50% { opacity: 0.688; transform: scale(1.01); }
+}
+
 @keyframes mi-amor-halo {
   0%, 100% { opacity: 0.58; transform: scale(0.98); }
   50% { opacity: 0.86; transform: scale(1.01); }
@@ -97,6 +130,11 @@ body {
   .mi-amor-card::before {
     animation: none;
   }
+
+  .upcoming-release-glow,
+  .upcoming-release-glow::before {
+    animation: none;
+  }
 }
 
 @media (max-width: 639px) {
@@ -108,6 +146,12 @@ body {
     inset: -12px;
     filter: blur(24px);
     animation-name: mi-amor-halo-mobile;
+  }
+
+  .upcoming-release-glow::before {
+    inset: -12px;
+    filter: blur(24px);
+    animation-name: upcoming-release-halo-mobile;
   }
 }
 
@@ -121,12 +165,22 @@ body {
   50% { opacity: 0.66; transform: scale(1.01); }
 }
 
+@keyframes upcoming-release-halo-mobile {
+  0%, 100% { opacity: 0.336; transform: scale(0.98); }
+  50% { opacity: 0.528; transform: scale(1.01); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .mi-amor-card {
     animation: none;
   }
 
   .mi-amor-card::before {
+    animation: none;
+  }
+
+  .upcoming-release-glow,
+  .upcoming-release-glow::before {
     animation: none;
   }
 }
