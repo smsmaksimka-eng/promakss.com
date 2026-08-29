@@ -25,12 +25,14 @@ export default function TrackBanner({ data = release, showLabel = true, sectionL
     ? "release_aesthetic_girl"
     : data.title.toLowerCase().includes("mi amor")
       ? "release_mi_amor"
+      : data.title.toLowerCase().includes("не забывай")
+        ? "release_ne_zabyvai"
       : "release_hedgehog_in_the_fog";
 
   return (
     <section className={`mx-auto w-full px-6 sm:px-8 ${highlight ? "max-w-[700px]" : "max-w-[760px]"}`} aria-label={`Ещё музыка — ${data.title}`}>
       {showLabel && <p className="mb-4 text-center text-[22px] font-semibold tracking-[0.3em] text-[var(--color-cream)] sm:mb-5">{sectionLabel}</p>}
-      <div className={`group flex w-full items-center rounded-[28px] border border-[#b9853d]/65 bg-[rgba(25,23,21,0.78)] text-[var(--color-cream)] shadow-[0_0_18px_rgba(205,155,73,0.08)] transition-[box-shadow,border-color] duration-[220ms] ease-out hover:border-[#d2a45a] hover:shadow-[0_0_28px_rgba(205,155,73,0.14)] ${highlight ? "mi-amor-card gap-4 px-3 py-5 sm:gap-8 sm:px-6 sm:py-6" : "gap-3 px-3 py-3 sm:gap-5 sm:px-4"}`}>
+      <div className={`${highlight ? "mi-amor-card flex flex-wrap items-center gap-4 px-3 py-5 sm:flex-nowrap sm:gap-8 sm:px-6 sm:py-6" : "flex items-center gap-3 px-3 py-3 sm:gap-5 sm:px-4"} group w-full rounded-[28px] border border-[#b9853d]/65 bg-[rgba(25,23,21,0.78)] text-[var(--color-cream)] shadow-[0_0_18px_rgba(205,155,73,0.08)] transition-[box-shadow,border-color] duration-[220ms] ease-out hover:border-[#d2a45a] hover:shadow-[0_0_28px_rgba(205,155,73,0.14)]`}>
         <Image
           src={data.cover}
           alt={`Обложка релиза «${data.title}»`}
@@ -44,7 +46,7 @@ export default function TrackBanner({ data = release, showLabel = true, sectionL
           </h2>
           {data.description && <p className={`${highlight ? "text-[12px] sm:text-[13px]" : "text-[11px] sm:text-[12px]"} mt-1 truncate tracking-[0.12em] text-white/55`}>{data.description}</p>}
         </div>
-        <div className={`flex shrink-0 items-center ${highlight ? "gap-1 sm:gap-3" : "gap-2 sm:gap-4"}`}>
+        <div className={`flex shrink-0 items-center ${highlight ? "basis-full justify-end gap-1 sm:basis-auto sm:gap-3" : "gap-2 sm:gap-4"}`}>
           {platforms.filter(({ key }) => data.links[key]).map(({ key, label, icon: Icon }) => (
             <a
               key={key}

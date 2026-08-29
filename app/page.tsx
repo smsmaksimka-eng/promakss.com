@@ -5,8 +5,8 @@ import album from "@/data/album.json";
 import aestheticGirl from "@/data/aesthetic-girl.json";
 import TrackBanner from "@/components/TrackBanner";
 import miAmor from "@/data/mi-amor.json";
-import UpcomingRelease from "@/components/UpcomingRelease";
+import neZabyvai from "@/data/ne-zabyvai.json";
 
 export default function HomePage() {
-  return <><Header /><main className="space-y-8"><AlbumBanner data={album} /><UpcomingRelease /><TrackBanner data={miAmor} sectionLabel="НОВЫЙ РЕЛИЗ" highlight /><TrackBanner /><TrackBanner data={aestheticGirl} showLabel={false} /></main><Footer /></>;
+  return <><Header /><main className="space-y-8"><AlbumBanner data={album} /><TrackBanner data={neZabyvai} sectionLabel="НОВЫЙ РЕЛИЗ" highlight /><TrackBanner /><TrackBanner data={aestheticGirl} showLabel={false} /><TrackBanner data={miAmor} showLabel={false} /></main><Footer /></>;
 }
