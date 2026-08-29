@@ -46,7 +46,7 @@ export default function TrackBanner({ data = release, showLabel = true, sectionL
           </h2>
           {data.description && <p className={`${highlight ? "text-[12px] sm:text-[13px]" : "text-[11px] sm:text-[12px]"} mt-1 truncate tracking-[0.12em] text-white/55`}>{data.description}</p>}
         </div>
-        <div className={`flex shrink-0 items-center ${highlight ? "basis-full justify-end gap-1 sm:basis-auto sm:gap-3" : "gap-2 sm:gap-4"}`}>
+        <div className={`flex items-center ${highlight ? "basis-full w-full justify-between px-1 sm:basis-auto sm:w-auto sm:justify-end sm:px-0 sm:gap-3" : "min-w-0 flex-1 justify-between gap-2 sm:flex-none sm:gap-4"}`}>
           {platforms.filter(({ key }) => data.links[key]).map(({ key, label, icon: Icon }) => (
             <a
               key={key}
@@ -58,9 +58,9 @@ export default function TrackBanner({ data = release, showLabel = true, sectionL
                 reachMetrikaGoal(streamGoals[key]);
               }}
               aria-label={`Слушать «${data.title}» ${label.replace("Слушать «Ёжик в тумане» ", "")}`}
-              className="flex h-9 w-9 items-center justify-center rounded-full text-[#d3a457] transition-[opacity,filter] duration-[200ms] ease-out hover:opacity-100 hover:[filter:drop-shadow(0_0_6px_rgba(211,164,87,0.7))] sm:h-10 sm:w-10"
+              className="flex h-[38px] w-[38px] items-center justify-center rounded-full text-[#d3a457] transition-[opacity,filter] duration-[200ms] ease-out hover:opacity-100 hover:[filter:drop-shadow(0_0_6px_rgba(211,164,87,0.7))] sm:h-10 sm:w-10"
             >
-              <Icon aria-hidden="true" className="h-5 w-5 sm:h-6 sm:w-6" />
+              <Icon aria-hidden="true" className="h-[21px] w-[21px] sm:h-6 sm:w-6" />
             </a>
           ))}
         </div>
