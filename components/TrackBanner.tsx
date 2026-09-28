@@ -25,8 +25,10 @@ export default function TrackBanner({ data = release, showLabel = true, sectionL
     ? "release_aesthetic_girl"
     : data.title.toLowerCase().includes("mi amor")
       ? "release_mi_amor"
-      : data.title.toLowerCase().includes("не забывай")
+    : data.title.toLowerCase().includes("не забывай")
         ? "release_ne_zabyvai"
+      : data.title.toLowerCase().includes("maa to maa")
+        ? "release_maa_to_maa"
       : "release_hedgehog_in_the_fog";
 
   return (
