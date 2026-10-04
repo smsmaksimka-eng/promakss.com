@@ -29,6 +29,8 @@ export default function TrackBanner({ data = release, showLabel = true, sectionL
         ? "release_ne_zabyvai"
       : data.title.toLowerCase().includes("maa to maa")
         ? "release_maa_to_maa"
+      : data.title.toLowerCase().includes("славянский фолк")
+        ? "release_slavic_folk"
       : "release_hedgehog_in_the_fog";
 
   return (
