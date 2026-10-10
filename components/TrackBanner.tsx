@@ -39,7 +39,7 @@ export default function TrackBanner({ data = release, showLabel = true, sectionL
   return (
     <section className={`mx-auto w-full px-6 sm:px-8 ${highlight ? "max-w-[700px]" : "max-w-[760px]"}`} aria-label={`Ещё музыка — ${data.title}`}>
       {showLabel && <p className="mb-4 text-center text-[22px] font-semibold tracking-[0.3em] text-[var(--color-cream)] sm:mb-5">{sectionLabel}</p>}
-      <div className={`${highlight ? "mi-amor-card flex flex-wrap items-center gap-5 px-3 py-5 sm:flex-nowrap sm:gap-8 sm:px-6 sm:py-6" : "flex items-center gap-3 px-3 py-3 sm:gap-5 sm:px-4"} group w-full rounded-[28px] border border-[#b9853d]/65 bg-[rgba(25,23,21,0.78)] text-[var(--color-cream)] shadow-[0_0_18px_rgba(205,155,73,0.08)] transition-[box-shadow,border-color] duration-[220ms] ease-out hover:border-[#d2a45a] hover:shadow-[0_0_28px_rgba(205,155,73,0.14)]`}>
+      <div className={`${highlight ? "mi-amor-card flex flex-wrap items-center gap-5 px-3 py-5 sm:px-6 sm:py-6 md:flex-nowrap md:gap-8" : "flex flex-wrap items-center gap-3 px-3 py-3 sm:px-4 md:flex-nowrap md:gap-5"} group w-full rounded-[28px] border border-[#b9853d]/65 bg-[rgba(25,23,21,0.78)] text-[var(--color-cream)] shadow-[0_0_18px_rgba(205,155,73,0.08)] transition-[box-shadow,border-color] duration-[220ms] ease-out hover:border-[#d2a45a] hover:shadow-[0_0_28px_rgba(205,155,73,0.14)]`}>
         <Image
           src={data.cover}
           alt={`Обложка релиза «${data.title}»`}
@@ -48,13 +48,13 @@ export default function TrackBanner({ data = release, showLabel = true, sectionL
           sizes={highlight ? "(max-width: 639px) 128px, 140px" : "(max-width: 639px) 56px, 64px"}
           className={`shrink-0 rounded-[16px] object-cover transition-transform duration-[220ms] ease-out group-hover:scale-[1.02] ${highlight ? "h-[128px] w-[128px] sm:h-[140px] sm:w-[140px]" : "h-14 w-14 sm:h-16 sm:w-16"}`}
         />
-        <div className="min-w-0 flex-1">
-          <h2 className={`${highlight ? "text-[20px] sm:text-[28px]" : "text-[17px] sm:text-[20px]"} font-semibold leading-tight tracking-[0.08em] sm:tracking-[0.12em]`}>
+        <div className={`min-w-0 flex-1 ${highlight ? "max-[359px]:basis-full" : ""}`}>
+          <h2 className={`${highlight ? "text-[20px] sm:text-[28px]" : "text-[17px] sm:text-[20px]"} break-words font-semibold leading-tight tracking-[0.08em] sm:tracking-[0.12em]`}>
             {data.title === "Ёжик в тумане" ? <>Ёжик в<span className="sm:hidden"><br /></span><span className="sm:hidden">тумане</span><span className="hidden sm:inline"> тумане</span></> : data.title}
           </h2>
-          {data.description && <p className={`${highlight ? "text-[12px] sm:text-[13px]" : "text-[11px] sm:text-[12px]"} mt-1 truncate tracking-[0.12em] text-white/55`}>{data.description}</p>}
+          {data.description && <p className={`${highlight ? "text-[12px] sm:text-[13px]" : "text-[11px] sm:text-[12px]"} mt-1 whitespace-normal break-words leading-snug tracking-[0.12em] text-white/55`}>{data.description}</p>}
         </div>
-        <div className={`flex items-center ${highlight ? "basis-full w-full justify-between px-1 sm:basis-auto sm:w-auto sm:justify-end sm:px-0 sm:gap-3" : "min-w-0 flex-1 justify-between gap-2 sm:flex-none sm:gap-4"}`}>
+        <div className={`flex items-center ${highlight ? "basis-full w-full justify-between px-1 md:basis-auto md:w-auto md:justify-end md:px-0 md:gap-3" : "basis-full w-full justify-between px-1 md:basis-auto md:w-auto md:flex-none md:justify-end md:px-0 md:gap-4"}`}>
           {platforms.filter(({ key }) => data.links[key]).map(({ key, label, icon: Icon }) => (
             <a
               key={key}

@@ -38,7 +38,7 @@ export default function AlbumBanner({ data = album, label }: { data?: AlbumData;
   return (
     <section className="mx-auto w-full max-w-[760px] px-6 sm:px-8" aria-label={`Альбом ${data.title}`}>
       {label && <p className="mb-6 text-center text-[22px] font-semibold tracking-[0.3em] text-[var(--color-cream)] sm:mb-7">{label}</p>}
-      <div className="group flex w-full items-center gap-3 rounded-[28px] border border-[#b9853d]/65 bg-[rgba(25,23,21,0.78)] px-3 py-3 text-[var(--color-cream)] shadow-[0_0_18px_rgba(205,155,73,0.08)] transition-[box-shadow,border-color] duration-[220ms] ease-out hover:border-[#d2a45a] hover:shadow-[0_0_28px_rgba(205,155,73,0.14)] sm:gap-5 sm:px-4">
+      <div className="group flex w-full flex-wrap items-center gap-3 rounded-[28px] border border-[#b9853d]/65 bg-[rgba(25,23,21,0.78)] px-3 py-3 text-[var(--color-cream)] shadow-[0_0_18px_rgba(205,155,73,0.08)] transition-[box-shadow,border-color] duration-[220ms] ease-out hover:border-[#d2a45a] hover:shadow-[0_0_28px_rgba(205,155,73,0.14)] sm:px-4 md:flex-nowrap md:gap-5">
       <div className="relative h-12 w-20 shrink-0 overflow-hidden rounded-[16px] sm:h-16 sm:w-28">
         <Image
         src={data.cover}
@@ -49,12 +49,12 @@ export default function AlbumBanner({ data = album, label }: { data?: AlbumData;
           className="object-cover object-center transition-transform duration-[220ms] ease-out group-hover:scale-[1.02]"
         />
       </div>
-      <div className="flex min-w-0 flex-1 items-center justify-between gap-3">
-        <div className="min-w-0 text-center sm:text-left">
-          <span className="block truncate text-[16px] font-semibold tracking-[0.12em] sm:text-[18px] sm:tracking-[0.16em]">{data.title}</span>
-          {data.description && <span className="mt-1 block truncate text-[11px] tracking-[0.14em] text-white/55 sm:text-[12px]">{data.description}</span>}
+      <div className="flex min-w-0 flex-1 flex-wrap items-center gap-3 md:flex-nowrap md:justify-between">
+        <div className="min-w-0 flex-1 text-center sm:text-left">
+          <span className="block whitespace-normal break-words text-[16px] font-semibold leading-snug tracking-[0.12em] sm:text-[18px] sm:tracking-[0.16em]">{data.title}</span>
+          {data.description && <span className="mt-1 block whitespace-normal break-words text-[11px] leading-snug tracking-[0.14em] text-white/55 sm:text-[12px]">{data.description}</span>}
         </div>
-        <div className="flex shrink-0 items-center gap-1 sm:gap-3">
+        <div className="flex basis-full w-full shrink-0 items-center justify-between px-1 md:basis-auto md:w-auto md:justify-end md:px-0 md:gap-3">
           {platforms.filter(({ key }) => links[key]).map(({ key, label, icon: Icon }) => (
             <a
               key={key}
