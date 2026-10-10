@@ -1,6 +1,11 @@
 {
-  "title": "Deep and Chill vol.1?",
+  "title": "Deep and Chill vol.1",
   "description": "растворись в гипнотическом deep house",
   "cover": "/releases/deep1.png",
-  "links": {}
+  "links": {
+    "yandex": "https://music.yandex.ru/album/44208707?ref_id=C31F4A94-ABAE-4EB1-81C8-7B71F838D9A0&utm_medium=copy_link",
+    "vk": "https://vk.ru/music/album/-2000441588_29441588_cf4eaed7bfbd879d70",
+    "youtube": "https://youtube.com/playlist?list=OLAK5uy_nNM-Y8Yjxg5vbP8uCCw9GT6mOB5_kIcz8&si=K1E4HMu8PY5BxfQp",
+    "spotify": "https://open.spotify.com/album/74xwXan8ilcdsxxp2ahQ2L?si=P48rQrG1RBOJuXnYJhGXNA&utm_source=copy-link"
+  }
 }

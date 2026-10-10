@@ -43,8 +43,9 @@ export default function TrackBanner({ data = release, showLabel = true, sectionL
         <Image
           src={data.cover}
           alt={`Обложка релиза «${data.title}»`}
-          width={64}
-          height={64}
+          width={highlight ? 140 : 64}
+          height={highlight ? 140 : 64}
+          sizes={highlight ? "(max-width: 639px) 128px, 140px" : "(max-width: 639px) 56px, 64px"}
           className={`shrink-0 rounded-[16px] object-cover transition-transform duration-[220ms] ease-out group-hover:scale-[1.02] ${highlight ? "h-[128px] w-[128px] sm:h-[140px] sm:w-[140px]" : "h-14 w-14 sm:h-16 sm:w-16"}`}
         />
         <div className="min-w-0 flex-1">
