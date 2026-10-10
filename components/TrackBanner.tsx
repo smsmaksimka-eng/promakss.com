@@ -21,17 +21,20 @@ const platforms = [
 ] as const;
 
 export default function TrackBanner({ data = release, showLabel = true, sectionLabel = "ЕЩЕ МУЗЫКА", highlight = false }: { data?: TrackData; showLabel?: boolean; sectionLabel?: string; highlight?: boolean }) {
-  const releaseGoal = data.title.toLowerCase().includes("aesthetic")
+  const normalizedTitle = data.title.toLowerCase();
+  const releaseGoal = normalizedTitle.includes("aesthetic") || normalizedTitle.includes("aestetic")
     ? "release_aesthetic_girl"
-    : data.title.toLowerCase().includes("mi amor")
+    : normalizedTitle.includes("mi amor")
       ? "release_mi_amor"
-    : data.title.toLowerCase().includes("не забывай")
+    : normalizedTitle.includes("не забывай")
         ? "release_ne_zabyvai"
-      : data.title.toLowerCase().includes("maa to maa")
+      : normalizedTitle.includes("maa to maa")
         ? "release_maa_to_maa"
-      : data.title.toLowerCase().includes("славянский фолк")
+      : normalizedTitle.includes("славянский фолк")
         ? "release_slavic_folk"
-      : "release_hedgehog_in_the_fog";
+      : normalizedTitle.includes("ёжик в тумане")
+        ? "release_hedgehog_in_the_fog"
+        : undefined;
 
   return (
     <section className={`mx-auto w-full px-6 sm:px-8 ${highlight ? "max-w-[700px]" : "max-w-[760px]"}`} aria-label={`Ещё музыка — ${data.title}`}>
@@ -58,7 +61,7 @@ export default function TrackBanner({ data = release, showLabel = true, sectionL
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => {
-                reachMetrikaGoal(releaseGoal);
+                if (releaseGoal) reachMetrikaGoal(releaseGoal);
                 reachMetrikaGoal(streamGoals[key]);
               }}
               aria-label={`Слушать «${data.title}» ${label.replace("Слушать «Ёжик в тумане» ", "")}`}

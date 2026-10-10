@@ -8,7 +8,8 @@ import miAmor from "@/data/mi-amor.json";
 import neZabyvai from "@/data/ne-zabyvai.json";
 import maaToMaa from "@/data/maa-to-maa.json";
 import slavicFolk from "@/data/slavic-folk.json";
+import deepAndChill from "@/data/deep-and-chill.json";
 
 export default function HomePage() {
-  return <><Header /><main className="space-y-8"><AlbumBanner data={album} /><TrackBanner data={slavicFolk} sectionLabel="НОВЫЙ АЛЬБОМ" highlight /><TrackBanner data={maaToMaa} /><TrackBanner data={neZabyvai} showLabel={false} /><TrackBanner showLabel={false} /><TrackBanner data={aestheticGirl} showLabel={false} /><TrackBanner data={miAmor} showLabel={false} /></main><Footer /></>;
+  return <><Header /><main className="space-y-8"><AlbumBanner data={album} /><TrackBanner data={deepAndChill} sectionLabel="НОВЫЙ АЛЬБОМ" highlight /><TrackBanner data={slavicFolk} /><TrackBanner data={maaToMaa} showLabel={false} /><TrackBanner data={neZabyvai} showLabel={false} /><TrackBanner showLabel={false} /><TrackBanner data={aestheticGirl} showLabel={false} /><TrackBanner data={miAmor} showLabel={false} /></main><Footer /></>;
 }
