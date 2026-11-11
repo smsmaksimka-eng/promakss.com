@@ -13,7 +13,8 @@ import sixthElement from "@/data/sixth-element.json";
 import ulici from "@/data/ulici.json";
 import tolkoMi from "@/data/tolko-mi.json";
 import mandem from "@/data/mandem.json";
+import again from "@/data/again.json";
 
 export default function HomePage() {
-  return <><Header /><main className="space-y-8"><AlbumBanner data={album} /><TrackBanner data={ulici} sectionLabel="НОВЫЕ РЕЛИЗЫ" /><TrackBanner data={tolkoMi} showLabel={false} /><TrackBanner data={mandem} showLabel={false} /><TrackBanner data={slavicFolk} /><TrackBanner data={deepAndChill} showLabel={false} /><TrackBanner data={maaToMaa} showLabel={false} /><TrackBanner data={neZabyvai} showLabel={false} /><TrackBanner showLabel={false} /><TrackBanner data={aestheticGirl} showLabel={false} /><TrackBanner data={miAmor} showLabel={false} /><TrackBanner data={sixthElement} showLabel={false} /></main><Footer /></>;
+  return <><Header /><main className="space-y-8"><AlbumBanner data={album} /><TrackBanner data={again} sectionLabel="НОВЫЕ РЕЛИЗЫ" /><TrackBanner data={ulici} showLabel={false} /><TrackBanner data={tolkoMi} showLabel={false} /><TrackBanner data={mandem} /><TrackBanner data={slavicFolk} showLabel={false} /><TrackBanner data={deepAndChill} showLabel={false} /><TrackBanner data={maaToMaa} showLabel={false} /><TrackBanner data={neZabyvai} showLabel={false} /><TrackBanner showLabel={false} /><TrackBanner data={aestheticGirl} showLabel={false} /><TrackBanner data={miAmor} showLabel={false} /><TrackBanner data={sixthElement} showLabel={false} /></main><Footer /></>;
 }
