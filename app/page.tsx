@@ -14,7 +14,8 @@ import ulici from "@/data/ulici.json";
 import tolkoMi from "@/data/tolko-mi.json";
 import mandem from "@/data/mandem.json";
 import again from "@/data/again.json";
+import dozhd from "@/data/dozhd.json";
 
 export default function HomePage() {
-  return <><Header /><main className="space-y-8"><AlbumBanner data={album} /><TrackBanner data={again} sectionLabel="НОВЫЕ РЕЛИЗЫ" highlight /><TrackBanner data={ulici} /><TrackBanner data={tolkoMi} showLabel={false} /><TrackBanner data={sixthElement} showLabel={false} /><TrackBanner data={mandem} showLabel={false} /><TrackBanner data={slavicFolk} showLabel={false} /><TrackBanner data={deepAndChill} showLabel={false} /><TrackBanner data={maaToMaa} showLabel={false} /><TrackBanner data={neZabyvai} showLabel={false} /><TrackBanner showLabel={false} /><TrackBanner data={aestheticGirl} showLabel={false} /><TrackBanner data={miAmor} showLabel={false} /></main><Footer /></>;
+  return <><Header /><main className="space-y-8"><AlbumBanner data={album} /><section aria-label="Новые релизы"><p className="mb-4 text-center text-[22px] font-semibold tracking-[0.3em] text-[var(--color-cream)] sm:mb-5">НОВЫЕ РЕЛИЗЫ</p><div className="mx-auto grid w-full max-w-[1100px] grid-cols-1 gap-8 md:grid-cols-2"><TrackBanner data={dozhd} showLabel={false} highlight featuredGrid /><TrackBanner data={again} showLabel={false} highlight featuredGrid /></div></section><TrackBanner data={ulici} /><TrackBanner data={tolkoMi} showLabel={false} /><TrackBanner data={sixthElement} showLabel={false} /><TrackBanner data={mandem} showLabel={false} /><TrackBanner data={slavicFolk} showLabel={false} /><TrackBanner data={deepAndChill} showLabel={false} /><TrackBanner data={maaToMaa} showLabel={false} /><TrackBanner data={neZabyvai} showLabel={false} /><TrackBanner showLabel={false} /><TrackBanner data={aestheticGirl} showLabel={false} /><TrackBanner data={miAmor} showLabel={false} /></main><Footer /></>;
 }
