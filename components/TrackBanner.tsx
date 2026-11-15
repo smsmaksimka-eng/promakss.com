@@ -20,7 +20,7 @@ const platforms = [
   { key: "spotify", label: "Слушать «Ёжик в тумане» в Spotify", icon: SiSpotify },
 ] as const;
 
-export default function TrackBanner({ data = release, showLabel = true, sectionLabel = "ЕЩЕ МУЗЫКА", highlight = false, featuredGrid = false }: { data?: TrackData; showLabel?: boolean; sectionLabel?: string; highlight?: boolean; featuredGrid?: boolean }) {
+export default function TrackBanner({ data = release, showLabel = true, sectionLabel = "ЕЩЕ МУЗЫКА", highlight = false, featuredGrid = false, glow = false }: { data?: TrackData; showLabel?: boolean; sectionLabel?: string; highlight?: boolean; featuredGrid?: boolean; glow?: boolean }) {
   const normalizedTitle = data.title.toLowerCase();
   const releaseGoal = normalizedTitle.includes("aesthetic") || normalizedTitle.includes("aestetic")
     ? "release_aesthetic_girl"
@@ -39,14 +39,14 @@ export default function TrackBanner({ data = release, showLabel = true, sectionL
   return (
     <section className={`mx-auto w-full px-6 sm:px-8 ${highlight ? "max-w-[700px]" : "max-w-[760px]"}`} aria-label={`Ещё музыка — ${data.title}`}>
       {showLabel && <p className="mb-4 text-center text-[22px] font-semibold tracking-[0.3em] text-[var(--color-cream)] sm:mb-5">{sectionLabel}</p>}
-      <div className={`${highlight ? `mi-amor-card flex flex-wrap items-center gap-5 px-3 py-5 sm:px-6 sm:py-6 ${featuredGrid ? "" : "md:flex-nowrap md:gap-8"}` : "flex flex-wrap items-center gap-3 px-3 py-3 sm:px-4 md:flex-nowrap md:gap-5"} group w-full rounded-[28px] border border-[#b9853d]/65 bg-[rgba(25,23,21,0.78)] text-[var(--color-cream)] shadow-[0_0_18px_rgba(205,155,73,0.08)] transition-[box-shadow,border-color] duration-[220ms] ease-out hover:border-[#d2a45a] hover:shadow-[0_0_28px_rgba(205,155,73,0.14)]`}>
+      <div className={`${highlight || glow ? "mi-amor-card" : ""} ${highlight ? `flex flex-wrap items-center gap-5 px-3 py-5 sm:px-6 sm:py-6 ${featuredGrid ? "" : "md:flex-nowrap md:gap-8"}` : "flex flex-wrap items-center gap-3 px-3 py-3 sm:px-4 md:flex-nowrap md:gap-5"} group w-full rounded-[28px] border border-[#b9853d]/65 bg-[rgba(25,23,21,0.78)] text-[var(--color-cream)] shadow-[0_0_18px_rgba(205,155,73,0.08)] transition-[box-shadow,border-color] duration-[220ms] ease-out hover:border-[#d2a45a] hover:shadow-[0_0_28px_rgba(205,155,73,0.14)]`}>
         <Image
           src={data.cover}
           alt={`Обложка релиза «${data.title}»`}
           width={highlight ? 140 : 64}
           height={highlight ? 140 : 64}
           sizes={highlight ? "(max-width: 639px) 128px, 140px" : "(max-width: 639px) 56px, 64px"}
-          className={`shrink-0 rounded-[16px] ${featuredGrid ? "object-contain" : "object-cover"} transition-transform duration-[220ms] ease-out group-hover:scale-[1.02] ${highlight ? "h-[128px] w-[128px] sm:h-[140px] sm:w-[140px]" : "h-14 w-14 sm:h-16 sm:w-16"}`}
+          className={`shrink-0 rounded-[16px] ${featuredGrid || glow ? "object-contain" : "object-cover"} transition-transform duration-[220ms] ease-out group-hover:scale-[1.02] ${highlight ? "h-[128px] w-[128px] sm:h-[140px] sm:w-[140px]" : "h-14 w-14 sm:h-16 sm:w-16"}`}
         />
         <div className={`min-w-0 flex-1 ${highlight ? "max-[359px]:basis-full" : ""}`}>
           <h2 className={`${highlight ? "text-[20px] sm:text-[28px]" : "text-[17px] sm:text-[20px]"} break-words font-semibold leading-tight tracking-[0.08em] sm:tracking-[0.12em]`}>
